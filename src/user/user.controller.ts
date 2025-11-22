@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/
 import { UserService } from './user.service';
 import { User } from './interfaces/user.interface';
 import { CreateUserDTO } from './dto/create-user.dto';
+import { UppercasePipe } from 'src/common/pipes/uppercase/uppercase.pipe';
 
 @Controller('users')
 export class UserController {
@@ -58,6 +59,15 @@ export class UserController {
 
         return this.userService.deleteUser(Number(id));
 
+    }
+
+    @Post("use-custom-pipe")
+    usePipe(
+        @Body("name", new UppercasePipe()) name: string
+    ){
+        return {
+            message: `Recieved name : ${name}`
+        }
     }
 
 }

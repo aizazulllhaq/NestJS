@@ -14,3 +14,5 @@
   - Custom pipe implement PipeTransformer interface.
 
     `nest g pipe common/pipes/uppercase`
+
+  - pipe return data to controller.
