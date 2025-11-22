@@ -13,4 +13,4 @@
   - Pipes can be apply on method level & controller level & globally.
   - Custom pipe implement PipeTransformer interface.
 
-   `npm g pipe common/pipes/uppercase`
+    `nest g pipe common/pipes/uppercase`
