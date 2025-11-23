@@ -1,16 +1,34 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Put, UseFilters, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './interfaces/user.interface';
 import { CreateUserDTO } from './dto/create-user.dto';
 import { UppercasePipe } from 'src/common/pipes/uppercase/uppercase.pipe';
+import { AuthGuard } from 'src/guards/auth/auth.guard';
+import { HttpExceptionFilter } from 'src/filters/http-exception/http-exception.filter';
 
 @Controller('users')
+// @UseGuards(AuthGuard)
+@UseFilters(HttpExceptionFilter)
 export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get()
     getUsers(): User[] {
         return this.userService.getUsers();
+    }
+
+    // exploring guard
+    @Get("test-guard")
+    // @UseGuards(AuthGuard)
+    testGuard() {
+        return "Hurrrah! you pass the guard";
+    }
+
+    @Get("error/:id")
+    getErrorIFInvalidID(
+        @Param("id", ParseIntPipe) id: number
+    ) {
+        return `ID : ${id}`
     }
 
     @Get(":id")
@@ -55,19 +73,21 @@ export class UserController {
     @Delete(":id")
     removeUser(
         @Param("id") id: string
-    ){
+    ) {
 
         return this.userService.deleteUser(Number(id));
 
     }
 
+    // exploring custom pipe
     @Post("use-custom-pipe")
     usePipe(
         @Body("name", new UppercasePipe()) name: string
-    ){
+    ) {
         return {
             message: `Recieved name : ${name}`
         }
     }
+
 
 }
