@@ -4,6 +4,8 @@ import { CreateUserDTO } from './dto/create-user.dto';
 
 @Injectable()
 export class UserService {
+    private isConnected = false;
+
     private users: User[] = [
         {
             id: 1,
@@ -16,6 +18,17 @@ export class UserService {
             age: 30
         }
     ]
+
+    // IMP : Life cyle method/event/hook
+    onModuleInit(){
+        this.isConnected = true;
+        console.log(`Fake db connected : ${this.isConnected}`);
+    }
+
+    onApplicationShutdown(signal : string = "db disconnected from frontend"){
+        this.isConnected = false;
+        console.log(`Fake db disconnected : ${this.isConnected}, and signal string : ${signal}`)
+    }
 
     // GET users
     getUsers(): User[] {

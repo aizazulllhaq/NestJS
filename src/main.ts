@@ -9,10 +9,10 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true, // remove fields which not in dtos
       forbidNonWhitelisted: true, // remove unknown fields
-      
     })
   )
 
   await app.listen(process.env.PORT ?? 3000);
+  app.enableShutdownHooks(); // lifecyle event/method/hooks must be define in server file.
 }
 bootstrap();
