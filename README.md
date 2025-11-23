@@ -28,3 +28,12 @@
 9. Environment Variable - done ( app module ) 
 
 10. Mongodb connected - done ( app module )
+
+11. Mongodb CRUD -  ( student )
+
+12. Mongodb Relations : 
+    1. One to One.
+          - Embeding
+          - Refrencing
+    2. One to Many.
+    3. Many to Many.
