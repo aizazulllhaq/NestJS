@@ -13,9 +13,9 @@
     - Pipes can be apply on method level & controller level & globally.
     - Custom pipe implement PipeTransformer interface.
 
-           `nest g pipe common/pipes/uppercase`
+          `nest g pipe common/pipes/uppercase`
 
-  - pipe return data to controller.
+    - pipe return data to controller.
 
 5. Guards - done ( user ) 
 
