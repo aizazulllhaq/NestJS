@@ -6,13 +6,16 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerMiddleware } from './middlewares/logger/logger.middleware';
 import { StudentModule } from './student/student.module';
+import { EmployeeController } from './employee/employee.controller';
+import { EmployeeModule } from './employee/employee.module';
 
 @Module({
   imports: [
     UserModule,
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.MONGO_URL!),
-    StudentModule
+    StudentModule,
+    EmployeeModule
   ],
   controllers: [AppController],
   providers: [AppService],
