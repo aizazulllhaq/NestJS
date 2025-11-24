@@ -33,7 +33,7 @@
 
 12. Mongodb Relations : 
     1. One to One.
-          - Embeding
+          - Embeding ( done ) ( employee )
           - Refrencing
     2. One to Many.
     3. Many to Many.
