@@ -8,6 +8,7 @@ import { LoggerMiddleware } from './middlewares/logger/logger.middleware';
 import { StudentModule } from './student/student.module';
 import { EmployeeController } from './employee/employee.controller';
 import { EmployeeModule } from './employee/employee.module';
+import { LibraryModule } from './library/library.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { EmployeeModule } from './employee/employee.module';
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.MONGO_URL!),
     StudentModule,
-    EmployeeModule
+    EmployeeModule,
+    LibraryModule
   ],
   controllers: [AppController],
   providers: [AppService],
