@@ -37,3 +37,12 @@
           - Refrencing
     2. One to Many.
     3. Many to Many.
+
+
+Resources :
+
+1. The Techzeen : https://www.youtube.com/playlist?list=PL5OhSdfH4uDt6iG-qze_Q3qgik6VKHeRU ( In Progress ) 
+2. NestJS Simplified : https://www.youtube.com/playlist?list=PLU-FndeNRY4DtRToRKmYF8qrZgQqzsnNR
+3. Bitfumes : https://www.youtube.com/watch?v=Mgr5_r70OJQ
+4. Computer Baba : https://www.youtube.com/playlist?list=PLqLR2H326bY6eRNOXJxWQkvKNlzmJQfLj
+5. Coder's Gyan : https://www.youtube.com/watch?v=KMg_Qg0WCds
