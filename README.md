@@ -36,6 +36,7 @@
           - Embeding ( done ) ( oneRelation-embeding branch ) ( employee )
           - Refrencing ( done ) ( main ) ( employee )
     2. One to Many.
+          - Embeding ( done ) ( oneToMany-relations-embeding branch ) ( product )
     3. Many to Many.
 
 
